@@ -1,13 +1,17 @@
 import argparse
 import os, time
+file = os.stat("dz1.py")
 parser = argparse.ArgumentParser()
-parser.add_argument("-f","--filename", default=os.path, help="file name", dest="filename")
-parser.add_argument("-m", "--mtime", default= os.path.getmtime(os.path), help="time", dest="mtime")
-parser.add_argument("-s", "--size", help="size", dest = "size", default=os.path.getsize(os.path))
+parser.add_argument("-m", "--mtime", help="time", action = "store_true")
+parser.add_argument("-s", "--size", help="size", action = "store_true")
+parser.add_argument("--rename", help="rename", action="store_true")
 args = parser.parse_args()
-filename = args.filename
 mtime = args.mtime
 size = args.size
-print(filename)
-print(mtime)
-print(size)
+rename = args.rename
+if mtime:
+    print("last modified: %s" % time.ctime(st.st_mtime))
+if size:
+    print("size: %s" %file.st_size)
+if rename:
+    os.rename('dz1.py', 'B.py')

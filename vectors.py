@@ -10,7 +10,7 @@ if dim == '2D':
     x2 = x * math.cos(angle) - y * math.sin(angle)
     y2 = x * math.sin(angle) + y * math.cos(angle)
     vector2 = [x2, y2]
-    print('length: %s' %length, 'new vector: ', *vector2 )
+    print('length: %s' %length, 'scaled ', x, ' ', y, ' ', 'new vector: ', *vector2)
 else:
     x, y, z = (float(i) for i in input().split())
     length = (x ** 2 + y ** 2 + z ** 2) ** 0.5
@@ -33,4 +33,4 @@ else:
         y2 = x * math.sin(angle) + y * math.sin(angle)
         z2 = z
     vector2 = [x2, y2, z2]
-    print('length: %s' %length, 'new vector: ', *vector2 )
+    print('length: %s' % length, 'scaled ', x, ' ', y, ' ', z, ' ', 'new vector: ', *vector2)
